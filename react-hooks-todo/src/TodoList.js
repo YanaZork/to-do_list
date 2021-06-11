@@ -7,12 +7,21 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const TodoList = ({ todos, deleteTodo }) => (
+
+
+const TodoList = ({ todos, deleteTodo, updateTodo }) => (
   <List>
     {todos.map((todo, index) => (
       <ListItem key={index.toString()} dense button>
-        <Checkbox  tabIndex={-1} color="primary"/>
-        <ListItemText primary={todo} />
+        <Checkbox 
+          tabIndex={-1} 
+          color="primary"
+          onChange={() => {updateTodo(index);}}
+        > 
+        </Checkbox>
+        <ListItemText className={todo.value ? "strikethrough" : ""}>
+          {todo.text}
+        </ListItemText>
         <ListItemSecondaryAction>
           <IconButton
             aria-label="Удалить"

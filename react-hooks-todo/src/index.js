@@ -8,7 +8,7 @@ import useTodoState from './useTodoState';
 import 'fontsource-roboto';
 
 const App = () => {
-  const { todos, addTodo, deleteTodo } = useTodoState([]);
+  const { todos, addTodo, deleteTodo, updateTodo } = useTodoState([]);
   return (
     <div className="App">
       <Typography component="h1" variant="h2">
@@ -22,7 +22,7 @@ const App = () => {
             addTodo(trimmedText);
           }
         }}/>
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
     </div>
   );
 };
