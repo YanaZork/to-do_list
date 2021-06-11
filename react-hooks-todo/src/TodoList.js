@@ -11,10 +11,10 @@ const TodoList = ({ todos, deleteTodo }) => (
   <List>
     {todos.map((todo, index) => (
       <ListItem key={index.toString()} dense button>
-        <Checkbox tabIndex={-1} disableRipple />
+        <Checkbox  tabIndex={-1} color="primary"/>
         <ListItemText primary={todo} />
         <ListItemSecondaryAction>
-<IconButton
+          <IconButton
             aria-label="Удалить"
             onClick={() => {
               deleteTodo(index);

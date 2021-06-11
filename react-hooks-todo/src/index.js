@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <Typography component="h1" variant="h2">
-        Дела
+        To-do Лист
       </Typography>
 
       <TodoForm 
